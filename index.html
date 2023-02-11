@@ -66,6 +66,7 @@
     
     for (var i in data) {
       var row = data[i];
+      console.log("LEN: " + row.length);
       console.log("LAT: " + row.LATITUDE + " LON: " + row.LONGITUD);
       var marker = L.marker([row.LATITUDE, row.LONGITUD], {
         opacity: 1
