@@ -54,10 +54,7 @@
 
   var crash_2016_layer = L.layerGroup();
   
-  var files_to_load = ["crash_smc_2020.csv", "crash_smc_2019.csv"]
-  for (let i = 0; i < cars.length; i++) { 
-    text += cars[i] + "<br>";
-  }
+  //var files_to_load = ["crash_smc_2020.csv", "crash_smc_2019.csv"]
 
   // Read markers data from data.csv
   $.get('./data/crash_smc_2020.csv', function(csvString) {
