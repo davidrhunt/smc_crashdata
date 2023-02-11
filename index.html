@@ -66,7 +66,7 @@
     
     for (var i in data) {
       var row = data[i];
-      if (row === undefined) {
+      if (row.LATITUDE === undefined || row.LONGITUD === undefined) {
         continue
       }
       console.log(row);
