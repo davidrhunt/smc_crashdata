@@ -44,6 +44,8 @@
         <a href="https://carto.com/attribution">CARTO</a>'
   }).addTo(map);
 
+  var streets = L.tileLayer(mapboxUrl, {id: 'mapbox/streets-v11', tileSize: 512, zoomOffset: -1, attribution: mapboxAttribution});
+
   var crash_2016_layer = L.layerGroup();
   
   // Read markers data from data.csv
@@ -67,7 +69,8 @@
   });
 
   var baseMaps = {
-    "OpenStreetMap": osm
+    "OpenStreetMap": osm,
+    "Streets": streets
   };
   var overlayMarkers = {
     "2016 Crashes": crash_2016_layer
