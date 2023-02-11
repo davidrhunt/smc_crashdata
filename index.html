@@ -66,6 +66,9 @@
     
     for (var i in data) {
       var row = data[i];
+      if (row === undefined) {
+        continue
+      }
       console.log(row);
       console.log("LAT: " + row.LATITUDE + " LON: " + row.LONGITUD);
       var marker = L.marker([row.LATITUDE, row.LONGITUD], {
