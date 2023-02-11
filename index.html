@@ -52,7 +52,7 @@
     ext: 'png'
   });
 
-  var crash_2016_layer = L.layerGroup();
+  var crash_2020_layer = L.layerGroup();
   
   //var files_to_load = ["crash_smc_2020.csv", "crash_smc_2019.csv"]
 
@@ -66,12 +66,12 @@
     
     for (var i in data) {
       var row = data[i];
-
+      console.log("LAT: " + row.LATITUDE " LON: " + row.LONGITUD);
       var marker = L.marker([row.LATITUDE, row.LONGITUD], {
         opacity: 1
       }).bindPopup(row.HARM_EVNAME);
       
-      marker.addTo(crash_2016_layer);
+      marker.addTo(crash_2020_layer);
     }
 
   });
@@ -81,7 +81,7 @@
     "Stamen Terrain": Stamen_Terrain
   };
   var overlayMarkers = {
-    "2020 Crashes": crash_2016_layer
+    "2020 Crashes": crash_2020_layer
   };
 
   var layerControl = L.control.layers(baseMaps ,overlayMarkers).addTo(map);
