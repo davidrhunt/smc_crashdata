@@ -80,19 +80,16 @@
         opacity: 1
       }).bindPopup(row.HARM_EVNAME);
       
-      heat_data.push([[row.LATITUDE, row.LONGITUD, 1.0]])
+      heat_data.push([row.LATITUDE, row.LONGITUD])
 
       marker.addTo(crash_2020_layer);
     }
-
-    var heatmap = L.heatLayer(heat_data, {
-      radius: 25
-    });
-
-    //heatmap.addTo(crash_2020_heatmap_layer);
-    heatmap.addTo(map);
-
   });
+
+  var heatmap = L.heatLayer(heat_data, {
+      radius: 25,
+      minOpacity: 0.5
+  }).addTo(crash_2020_heatmap_layer);
 
   var baseMaps = {
     "OpenStreetMap": osm,
@@ -103,7 +100,7 @@
     "2020 Heatmap": crash_2020_heatmap_layer
   };
 
-  //var layerControl = L.control.layers(baseMaps ,overlayMarkers).addTo(map);
+  var layerControl = L.control.layers(baseMaps, overlayMarkers).addTo(map);
 
   </script>
 </body>
