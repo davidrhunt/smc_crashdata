@@ -76,11 +76,11 @@
       }
       console.log(row);
       console.log("LAT: " + row.LATITUDE + " LON: " + row.LONGITUD);
-      var marker = L.marker([row.LATITUDE, row.LONGITUD, 1.0], {
+      var marker = L.marker([row.LATITUDE, row.LONGITUD], {
         opacity: 1
       }).bindPopup(row.HARM_EVNAME);
       
-      heat_data.push([[row.LATITUDE, row.LONGITUD]])
+      heat_data.push([[row.LATITUDE, row.LONGITUD, 1.0]])
 
       marker.addTo(crash_2020_layer);
     }
